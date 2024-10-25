@@ -20,3 +20,5 @@ Graphical User Interface (GUI):
 Task Management: Add tasks dynamically with execution time and priority.
 Scheduling Visualization: Observe real-time task execution, CPU usage, and task switching.
 Real-Time Monitoring: Monitor task progress, execution order, and performance.
+
+<img width="481" alt="{F52571F9-716F-4431-B4DB-E7FCB40EE6AE}" src="https://github.com/user-attachments/assets/8ff202a6-c62d-4aab-9f1b-5b4b8421e8ef">
