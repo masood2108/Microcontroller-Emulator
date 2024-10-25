@@ -11,15 +11,11 @@ class TaskSchedulerApp:
         self.tasks = []
         self.time_slice = 1
         self.selected_scheduler = None
-
-        # Set up GUI components
         self.create_widgets()
 
     def create_widgets(self):
         self.task_frame = ttk.Frame(self.root)
         self.task_frame.pack()
-
-        # Task Input Fields
         ttk.Label(self.task_frame, text="Task ID").grid(row=0, column=0)
         ttk.Label(self.task_frame, text="Execution Time").grid(row=0, column=1)
         ttk.Label(self.task_frame, text="Priority").grid(row=0, column=2)
@@ -33,16 +29,13 @@ class TaskSchedulerApp:
         self.priority_entry.grid(row=1, column=2)
 
         ttk.Button(self.task_frame, text="Add Task", command=self.add_task).grid(row=1, column=3)
-
-        # Scheduler Selection
         self.scheduler_var = tk.StringVar(value="RoundRobin")
         ttk.Radiobutton(self.root, text="Round Robin", variable=self.scheduler_var, value="RoundRobin").pack()
         ttk.Radiobutton(self.root, text="Priority", variable=self.scheduler_var, value="Priority").pack()
 
-        # Start Button
         ttk.Button(self.root, text="Start Scheduling", command=self.start_scheduling).pack()
 
-        # Output Area
+
         self.output_text = tk.Text(self.root, height=10)
         self.output_text.pack()
 
@@ -62,10 +55,8 @@ class TaskSchedulerApp:
         else:
             scheduler = PriorityScheduler(self.tasks)
 
-        # Run the scheduler in a separate thread
         threading.Thread(target=scheduler.run).start()
 
-# Run the Application
 if __name__ == "__main__":
     root = tk.Tk()
     app = TaskSchedulerApp(root)
